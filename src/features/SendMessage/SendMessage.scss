@@ -1,0 +1,72 @@
+@import "../../shared/variables.scss";
+
+.send-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__form {
+    padding: 60px 30px;
+    width: 500px;
+    background-color: #fff;
+    border-radius: $radius;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__description {
+    font-weight: 500;
+  }
+
+  &__agreement {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    button {
+      width: 32px;
+      height: 32px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: $border;
+      border-radius: $radius;
+    }
+  }
+
+  &__btn {
+    padding: 10px;
+    background-color: $reseda;
+    border-radius: $radius;
+    font-weight: 600;
+    font-size: 18px;
+    color: white;
+  }
+}
