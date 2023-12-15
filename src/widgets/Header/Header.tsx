@@ -1,8 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import "./Header.scss";
 import background from "./assets/background.jpg";
+import { useState } from "react";
+import SendMessage from "@/features/SendMessage/SendMessage";
 
 const Header = () => {
+  const [popUp, setPopUp] = useState<boolean>(false);
   return (
     <header className="header">
       <Image
@@ -22,8 +27,11 @@ const Header = () => {
             дома
           </p>
         </div>
-        <button>Оставить заявку</button>
+        <button onClick={() => setPopUp(true)}>
+          Оставить заявку
+        </button>
       </div>
+      {popUp && <SendMessage closePopUp={setPopUp} />}
     </header>
   );
 };

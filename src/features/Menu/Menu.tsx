@@ -8,9 +8,11 @@ import close_icon from "../../shared/icons/close-icon.svg";
 import { pages } from "./variables";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import SendMessage from "../SendMessage/SendMessage";
 
 const Menu = () => {
   const [menu, setMenu] = useState<boolean>(false);
+  const [popUp, setPopUp] = useState<boolean>(false);
   const menuRef: React.RefObject<HTMLDivElement> = useRef(null);
 
   const handleClick = () => {
@@ -63,7 +65,17 @@ const Menu = () => {
                 </Link>
               </li>
             ))}
+            <li>
+              <button
+                onClick={() => {
+                  setPopUp(true);
+                }}
+              >
+                Отправить заявку
+              </button>
+            </li>
           </ul>
+          {popUp && <SendMessage closePopUp={setPopUp} />}
         </div>
       )}
     </>

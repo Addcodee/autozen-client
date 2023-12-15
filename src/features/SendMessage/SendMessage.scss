@@ -49,8 +49,8 @@
     align-items: center;
 
     button {
-      width: 32px;
-      height: 32px;
+      min-width: 32px;
+      min-height: 32px;
 
       display: flex;
       align-items: center;
@@ -68,5 +68,62 @@
     font-weight: 600;
     font-size: 18px;
     color: white;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .send-message {
+    &__form {
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+    }
+
+    &__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      p {
+        font-size: 24px;
+        font-weight: 600;
+      }
+
+      button {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    &__description {
+      font-weight: 500;
+    }
+
+    &__agreement {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      button {
+        width: 32px;
+        height: 32px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: $border;
+        border-radius: $radius;
+      }
+    }
+
+    &__btn {
+      padding: 10px;
+      background-color: $reseda;
+      border-radius: $radius;
+      font-weight: 600;
+      font-size: 18px;
+      color: white;
+    }
   }
 }
