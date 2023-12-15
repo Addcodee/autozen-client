@@ -1,19 +1,19 @@
 "use client";
 
-import Image from "next/image";
 import "./Navbar.scss";
+import Image from "next/image";
+import Link from "next/link";
 import logo_mint from "../../shared/logo/autozen_logo_mint.svg";
 import logo_black from "../../shared/logo/autozen_logo_black.svg";
 import emblem_mint from "../../shared/logo/alt/autozen_emblem_mint.svg";
 import emblem_black from "../../shared/logo/alt/autozen-emblem-black.svg";
-
-import Link from "next/link";
 import Menu from "@/features/Menu/Menu";
 import SendMessage from "@/features/SendMessage/SendMessage";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
   const [navStyle, setNavStyle] = useState<boolean>(false);
+
   const handleScroll = () => {
     if (window.scrollY <= 0) {
       setNavStyle(false);
@@ -21,7 +21,15 @@ const Navbar = () => {
       setNavStyle(true);
     }
   };
-  window.addEventListener("scroll", handleScroll);
+
+  useEffect(() => {
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <nav className={`navbar ${navStyle && "nav-scroll"}`}>
       {navStyle ? (
