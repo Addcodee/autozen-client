@@ -5,6 +5,7 @@ import "./Header.scss";
 import background from "./assets/background.jpg";
 import { useState } from "react";
 import SendMessage from "@/features/SendMessage/SendMessage";
+import { bodyOverflow } from "@/shared/helpers";
 
 const Header = () => {
   const [popUp, setPopUp] = useState<boolean>(false);
@@ -27,7 +28,12 @@ const Header = () => {
             дома
           </p>
         </div>
-        <button onClick={() => setPopUp(true)}>
+        <button
+          onClick={() => {
+            setPopUp(true);
+            bodyOverflow("hidden");
+          }}
+        >
           Оставить заявку
         </button>
       </div>

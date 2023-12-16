@@ -2,10 +2,11 @@
 
 import "./SendMessage.scss";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import close_icon from "../../shared/icons/close-icon.svg";
 import check_icon from "../../shared/icons/check-icon.svg";
 import InputWithLabel from "@/entities/InputWithLabel/InputWithLabel";
+import { bodyOverflow } from "@/shared/helpers";
 
 interface ISendMessageProps {
   closePopUp: (boolean: boolean) => void;
@@ -17,14 +18,25 @@ const SendMessage: React.FC<ISendMessageProps> = ({
   const [checkbox, setCheckbox] = useState<boolean>(false);
 
   return (
-    <div onClick={() => closePopUp(false)} className="send-message">
+    <div
+      onClick={() => {
+        closePopUp(false);
+        bodyOverflow("auto");
+      }}
+      className="send-message"
+    >
       <div
         onClick={(e) => e.stopPropagation()}
         className="send-message__form"
       >
         <div className="send-message__header">
           <p>Задать вопрос</p>
-          <button onClick={() => closePopUp(false)}>
+          <button
+            onClick={() => {
+              closePopUp(false);
+              bodyOverflow("auto");
+            }}
+          >
             <Image
               src={close_icon}
               alt="close icon"

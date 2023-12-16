@@ -12,12 +12,14 @@ import Menu from "@/features/Menu/Menu";
 import SendMessage from "@/features/SendMessage/SendMessage";
 import CircleButton from "@/shared/UI/CircleButton/CircleButton";
 import message_icon from "../../shared/icons/send-icon.svg";
+import { bodyOverflow } from "@/shared/helpers";
 
 const Navbar = () => {
   const [navStyle, setNavStyle] = useState<boolean>(false);
   const [popUp, setPopUp] = useState<boolean>(false);
 
   const openPopUp = () => {
+    bodyOverflow("hidden");
     setPopUp(true);
   };
 

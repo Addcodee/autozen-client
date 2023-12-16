@@ -9,6 +9,7 @@ import { pages } from "./variables";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import SendMessage from "../SendMessage/SendMessage";
+import { bodyOverflow } from "@/shared/helpers";
 
 const Menu = () => {
   const [menu, setMenu] = useState<boolean>(false);
@@ -16,6 +17,7 @@ const Menu = () => {
   const menuRef: React.RefObject<HTMLDivElement> = useRef(null);
 
   const handleClick = () => {
+    bodyOverflow("hidden");
     setMenu(true);
   };
 
