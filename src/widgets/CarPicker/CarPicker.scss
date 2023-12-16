@@ -1,0 +1,158 @@
+@import "../../shared/variables.scss";
+
+.car-picker {
+  padding: 100px 180px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+
+  h3 {
+    font-size: 32px;
+    grid-column: 1 / 3;
+  }
+
+  &__params {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: $radius;
+    }
+
+    &_left {
+      border: 2px solid $danger;
+      color: $danger;
+    }
+
+    &_right {
+      background-color: $reseda;
+      color: white;
+    }
+  }
+
+  &_right {
+    padding: 20px;
+    border: $border;
+    border-radius: $radius;
+  }
+
+  &__result {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+
+    h5 {
+      font-size: 24px;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      li {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        p {
+          font-size: 18px;
+          font-weight: 500;
+        }
+
+        p:last-child {
+          font-weight: 600;
+        }
+      }
+    }
+
+    h6 {
+      flex: 1;
+      display: flex;
+      align-items: flex-end;
+
+      font-size: 24px;
+    }
+  }
+
+  &__message {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h4 {
+      font-size: 24px;
+      text-align: center;
+      text-wrap: balance;
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .car-picker {
+    padding: 70px 100px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .car-picker {
+    padding: 60px 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .car-picker {
+    grid-template-columns: 1fr;
+
+    h3 {
+      grid-column: 1/ 2;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .car-picker {
+    padding: 50px 20px;
+    grid-template-columns: 1fr;
+
+    h3 {
+      grid-column: 1/ 2;
+      font-size: 28px;
+    }
+
+    &__actions {
+      gap: 10px;
+
+      button {
+        font-size: 16px;
+      }
+    }
+
+    &__result {
+      gap: 30px;
+      h5,
+      h6 {
+        font-size: 22px;
+      }
+
+      ul {
+        li {
+          p {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}

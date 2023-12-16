@@ -17,7 +17,6 @@ const Menu = () => {
   const menuRef: React.RefObject<HTMLDivElement> = useRef(null);
 
   const handleClick = () => {
-    bodyOverflow("hidden");
     setMenu(true);
   };
 
@@ -71,6 +70,7 @@ const Menu = () => {
               <button
                 onClick={() => {
                   setPopUp(true);
+                  bodyOverflow("hidden");
                 }}
               >
                 Отправить заявку
