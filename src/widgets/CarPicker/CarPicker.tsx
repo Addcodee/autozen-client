@@ -32,6 +32,7 @@ const CarPicker = () => {
     setGeneration([""]);
     setDeliveryType([""]);
     setDestination([""]);
+    setResult(false);
   };
 
   return (
