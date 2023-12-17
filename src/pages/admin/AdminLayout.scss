@@ -1,0 +1,11 @@
+.admin-layout {
+  display: grid;
+  grid-template-columns: 310px 1fr;
+
+  &__container {
+    height: 100vh;
+    padding: 30px;
+    background-color: #111;
+    color: white;
+  }
+}

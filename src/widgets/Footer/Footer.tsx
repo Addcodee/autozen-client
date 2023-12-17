@@ -1,12 +1,16 @@
+"use client";
+
 import "./Footer.scss";
 import logo from "../../shared/logo/autozen_logo_mint.svg";
 import emblem from "../../shared/logo/alt/autozen_emblem_mint.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { contacts, links, nets } from "./variables";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
-  return (
+  const pathName = usePathname();
+  return pathName?.slice(0, 6) === "/admin" ? null : (
     <footer className="footer">
       <div className="footer__header">
         <h3>Остались вопросы?</h3>

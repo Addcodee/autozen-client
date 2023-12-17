@@ -13,10 +13,13 @@ import SendMessage from "@/features/SendMessage/SendMessage";
 import CircleButton from "@/shared/UI/CircleButton/CircleButton";
 import message_icon from "../../shared/icons/send-icon.svg";
 import { bodyOverflow } from "@/shared/helpers";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [navStyle, setNavStyle] = useState<boolean>(false);
   const [popUp, setPopUp] = useState<boolean>(false);
+
+  const pathname = usePathname();
 
   const openPopUp = () => {
     bodyOverflow("hidden");
@@ -39,7 +42,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  return (
+  return pathname?.slice(0, 6) === "/admin" ? null : (
     <nav className={`navbar ${navStyle && "nav-scroll"}`}>
       {navStyle ? (
         <Image
