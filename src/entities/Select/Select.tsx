@@ -69,7 +69,11 @@ const Select: React.FC<ISelectProps> = ({
         onClick={() => setOpen((prev) => !prev)}
         className="select__label"
       >
-        <p>{value[0] === "" ? placeholder : value.join(", ")}</p>
+        <p>
+          {value[0] === "" || value.length === 0
+            ? placeholder
+            : value.join(", ")}
+        </p>
         <Image
           src={chevron_down}
           alt="Down Chevron"
