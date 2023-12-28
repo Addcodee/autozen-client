@@ -38,7 +38,9 @@ const CarDashboard = () => {
     <div className="car-dashboard">
       <h3>
         <p>Фильтры</p>
-        <Image src={filter} alt="filter icon" />
+        <button>
+          <Image src={filter} alt="filter icon" />
+        </button>
       </h3>
       <div className="car-dashboard__filters">
         <Select

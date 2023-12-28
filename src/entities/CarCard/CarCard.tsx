@@ -28,7 +28,7 @@ const CarCard: React.FC<CarCardProps> = ({
       </Link>
 
       <div className={`car-card-${mode ? "list" : "grid"}__text`}>
-        <h4>{title}lfkngdfzlklk sdlkmgaslkmn</h4>
+        <h4>{title}</h4>
         <p
           className={`car-card-${mode ? "list" : "grid"}__text-${
             status ? "stock" : "order"
