@@ -1,24 +1,46 @@
-import Image from "next/image";
-import "./CarCard.scss";
-import car_image from "./assets/car-image.jpg";
+import "./CarCardGrid.scss";
+import "./CarCardList.scss";
+import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 
-const CarCard = () => {
+interface CarCardProps {
+  card: ICarCard;
+  mode: boolean;
+}
+
+interface ICarCard {
+  id: number;
+  img: StaticImageData;
+  title: string;
+  status: boolean;
+  price: number;
+}
+
+const CarCard: React.FC<CarCardProps> = ({
+  card,
+  mode,
+}: CarCardProps) => {
+  const { id, img, title, status, price } = card;
   return (
-    <div className="carCard">
-      <Image
-        src={car_image}
-        alt="Car Image"
-        className="carCard__image"
-        placeholder="blur"
-      />
+    <div className={`car-card-${mode ? "list" : "grid"}`}>
+      <Link href={`/cars/${id}`}>
+        <Image src={img} alt="car image" />
+      </Link>
 
-      <div className="carCard__text">
-        <h5>Mercedes-Benz GLC</h5>
-        <p>• В наличии</p>
+      <div className={`car-card-${mode ? "list" : "grid"}__text`}>
+        <h4>{title}lfkngdfzlklk sdlkmgaslkmn</h4>
+        <p
+          className={`car-card-${mode ? "list" : "grid"}__text-${
+            status ? "stock" : "order"
+          }`}
+        >
+          {status ? "• В наличии" : "• Под заказ"}
+        </p>
       </div>
-
-      <div className="carCard__price">
-        <p>15.450.000 $</p>
+      <div
+        className={`car-card-${mode ? "list" : "grid"}__price-n-btn`}
+      >
+        <p>{price}$</p>
         <button>Заказать</button>
       </div>
     </div>

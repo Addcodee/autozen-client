@@ -1,0 +1,45 @@
+@import "../../shared/variables.scss";
+
+.car-dashboard {
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  border-radius: $radius;
+  border: $border;
+  box-shadow: $shadow;
+
+  h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 28px;
+    font-weight: 600;
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &__filters {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .car-dashboard {
+    h3 {
+      font-size: 26px;
+    }
+
+    &__filters {
+      display: none;
+    }
+  }
+}
