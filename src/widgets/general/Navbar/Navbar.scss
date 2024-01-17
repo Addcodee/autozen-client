@@ -27,8 +27,11 @@
 
   &__logo-sm {
     display: none;
-    height: 80%;
-    width: fit-content;
+    height: 100%;
+    img {
+      height: 80%;
+      width: fit-content;
+    }
   }
 
   &__actions {
@@ -54,6 +57,7 @@
 
 .navbar {
   background-color: #fff;
+
   &__pages {
     display: flex;
     align-items: center;
@@ -70,6 +74,10 @@
   }
 }
 
+.navbar-home {
+  border-bottom: none;
+}
+
 .nav-scroll {
   background-color: #fff;
   transition: 0.3s;
@@ -84,7 +92,8 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .navbar {
+  .navbar,
+  .navbar-home {
     padding: 0 30px;
 
     &__pages {
@@ -94,7 +103,8 @@
 }
 
 @media screen and (max-width: 768px) {
-  .navbar {
+  .navbar,
+  .navbar-home {
     padding: 0 30px;
     height: 70px;
 
@@ -103,7 +113,8 @@
     }
 
     &__logo-sm {
-      display: block;
+      display: flex;
+      align-items: center;
     }
 
     &__message {

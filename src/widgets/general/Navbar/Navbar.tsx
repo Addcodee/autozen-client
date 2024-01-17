@@ -48,7 +48,7 @@ const Navbar = () => {
         pathname === "/" || pathname === "about-us"
           ? "navbar-home "
           : "navbar"
-      } ${navStyle && "nav-scroll"}`}
+      } ${navStyle ? "nav-scroll" : ""}`}
     >
       {navStyle ? (
         <Link href={"/"} className="navbar-home__logo">
