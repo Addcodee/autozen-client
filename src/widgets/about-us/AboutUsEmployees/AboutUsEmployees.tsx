@@ -39,7 +39,11 @@ const AboutUsEmployees = () => {
       <ul className="about-us-employees__list">
         {employees.map((employee) => (
           <li key={employee.id}>
-            <Image src={employee.image} alt="Employee Image" />
+            <Image
+              src={employee.image}
+              alt="Employee Image"
+              placeholder="blur"
+            />
             <div className="about-us-employees__text">
               <h4>{employee.name}</h4>
               <p>{employee.position}</p>

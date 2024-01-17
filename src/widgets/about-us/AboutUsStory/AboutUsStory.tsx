@@ -17,7 +17,11 @@ const AboutUsStory = () => {
           }`}
           key={part.id}
         >
-          <Image src={part.img} alt="Story Image" />
+          <Image
+            src={part.img}
+            alt="Story Image"
+            placeholder="blur"
+          />
           <div className="about-us-story__text">
             <h4>{part.title}</h4>
             <p>{part.description}</p>
