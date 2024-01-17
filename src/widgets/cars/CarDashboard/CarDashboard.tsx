@@ -20,19 +20,21 @@ import {
 import filter from "../../../shared/icons/filter.svg";
 import Image from "next/image";
 
+type option = string | string[];
+
 const CarDashboard = () => {
-  const [sortByName, setSortByName] = useState<string[]>([]);
-  const [sortByPopular, setSortByPopular] = useState<string[]>([]);
-  const [sortByPrice, setSortByPrice] = useState<string[]>([]);
-  const [mark, setMark] = useState<string[]>([]);
-  const [status, setStatus] = useState<string[]>([]);
-  const [year, setYear] = useState<string[]>([]);
-  const [color, setColor] = useState<string[]>([]);
-  const [innerColor, setInnerColor] = useState<string[]>([]);
-  const [mat, setMat] = useState<string[]>([]);
-  const [engine, setEngine] = useState<string[]>([]);
-  const [korobka, setKorobka] = useState<string[]>([]);
-  const [additional, setadditional] = useState<string[]>([]);
+  const [sortByName, setSortByName] = useState<option>([]);
+  const [sortByPopular, setSortByPopular] = useState<option>([]);
+  const [sortByPrice, setSortByPrice] = useState<option>([]);
+  const [mark, setMark] = useState<option>([]);
+  const [status, setStatus] = useState<option>([]);
+  const [year, setYear] = useState<option>([]);
+  const [color, setColor] = useState<option>([]);
+  const [innerColor, setInnerColor] = useState<option>([]);
+  const [mat, setMat] = useState<option>([]);
+  const [engine, setEngine] = useState<option>([]);
+  const [korobka, setKorobka] = useState<option>([]);
+  const [additional, setadditional] = useState<option>([]);
 
   return (
     <div className="car-dashboard">
