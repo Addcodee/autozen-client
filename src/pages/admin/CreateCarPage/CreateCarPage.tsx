@@ -4,17 +4,7 @@ import "./CreateCarPage.scss";
 import AdminHeader from "@/entities/AdminHeader/AdminHeader";
 import Select from "@/entities/Select/Select";
 import { useState } from "react";
-import {
-  additionalOptions,
-  bodyColorOptions,
-  brands,
-  engineOptions,
-  interiorColorOptions,
-  interiorMaterialOptions,
-  transmissionOptions,
-  typeOptions,
-  yearOptions,
-} from "./variables";
+
 import InputWithLabel from "@/entities/InputWithLabel/InputWithLabel";
 import Switcher from "@/entities/Switcher/Switcher";
 
@@ -33,6 +23,75 @@ const CreateCarPage = () => {
   const [transmission, setTransmission] = useState<option>("");
   const [additional, setAdditional] = useState<option>([]);
 
+  const brands = [
+    "Audi",
+    "BMW",
+    "Lexus",
+    "Mercedes-Benz",
+    "Porsche",
+    "Range Rover",
+    "Toyota",
+    "Volkswagen",
+    "Volvo",
+  ];
+
+  const typeOptions = ["В наличии", "Под заказ"];
+
+  const yearOptions = ["2019", "2020", "2021", "2022", "2023"];
+
+  const bodyColorOptions = [
+    "Белый",
+    "Зеленый металлик",
+    "Изумрудный",
+    "Серебристый",
+    "Серый",
+    "Серый бруклин",
+    "Синий",
+    "Темно-серый металлик",
+    "Темно-синий",
+    "Черно-зеленый",
+    "Черный",
+    "Черный металлик",
+  ];
+
+  const interiorColorOptions = [
+    "Бежевый",
+    "Белый",
+    "Коричневый",
+    "Красный",
+    "Серый",
+    "Черно-белый",
+    "Черный",
+  ];
+
+  const interiorMaterialOptions = [
+    "Алькантара",
+    "Искусственная кожа",
+    "Кожа",
+    "Кожа + вставки из Алькантары",
+    "Комбинированный / Ткань",
+    "Ткань",
+  ];
+
+  const engineOptions = [
+    "190 л.с.",
+    "197 л.с. / 2.0 л",
+    "2.0 л / 249 л.с. / Quattro",
+    "2.9 л",
+    "3.0 л / 340 л.с. / бензин",
+  ];
+
+  const transmissionOptions = [
+    "7-ступенчатая робот",
+    "9-ступенчатая автоматическая коробка передач",
+    "Автоматическая",
+    "8-ступенчатая автоматическая",
+  ];
+
+  const additionalOptions = [
+    "Carplay| Android, круиз-контроль, камера 360°, фаркоп, адаптивный круиз-контроль Plus, активная помощь при парковке, электрорегулировка передних сидений, активная система удержания полосы движения, электрохромное зеркало",
+  ];
+
   return (
     <div className="create-car-page">
       <AdminHeader header="Добавить автомобиль" />
@@ -49,6 +108,7 @@ const CreateCarPage = () => {
           theme="dark"
           label="Модель"
           onChange={(e) => setModel(e.target.value)}
+          value={model}
         />
         <Select
           options={typeOptions}
