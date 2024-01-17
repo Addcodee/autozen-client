@@ -3,8 +3,9 @@
   grid-template-columns: 310px 1fr;
 
   &__container {
-    height: 100vh;
-    padding: 30px;
+    min-height: 100vh;
+    height: 100%;
+    padding: 50px 30px;
     background-color: #111;
     color: white;
   }

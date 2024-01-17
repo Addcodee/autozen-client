@@ -1,0 +1,76 @@
+@import "../../../shared/variables.scss";
+
+.car-images {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  p {
+    font-weight: 500;
+    opacity: 0.7;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    img:nth-child(1) {
+      height: 500px;
+      grid-column: 1 / 2;
+      grid-row: 1 / 3;
+      border-top-left-radius: $radius;
+      border-bottom-left-radius: $radius;
+    }
+
+    img:nth-child(2) {
+      height: 245px;
+      border-top-right-radius: $radius;
+    }
+    img:nth-child(3) {
+      height: 245px;
+      border-bottom-right-radius: $radius;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .car-images {
+    &__container {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+
+      img:nth-child(1) {
+        height: 350px;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        border-radius: $radius;
+      }
+
+      img:nth-child(2) {
+        display: none;
+      }
+      img:nth-child(3) {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .car-images {
+    &__container {
+      img:nth-child(1) {
+        height: 300px;
+      }
+    }
+  }
+}

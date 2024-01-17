@@ -1,7 +1,3 @@
-import React from "react";
+import AdminCarsPage from "@/pages/admin/AdminCarsPage/AdminCarsPage";
 
-const page = () => {
-  return <div>page</div>;
-};
-
-export default page;
+export default AdminCarsPage;

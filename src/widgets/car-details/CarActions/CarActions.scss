@@ -1,0 +1,61 @@
+@import "../../../shared/variables.scss";
+
+.car-actions {
+  padding: 30px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  background-color: #fff;
+  border: $border;
+  border-radius: $radius;
+  box-shadow: $shadow;
+
+  &__price {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    h3 {
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 32px;
+      font-weight: 600;
+    }
+
+    p:last-child {
+      font-size: 18px;
+      font-weight: 500;
+      color: $green;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    button {
+      padding: 10px 20px;
+      font-weight: 600;
+    }
+
+    button:first-child {
+      background-color: $reseda;
+      color: white;
+      border-radius: $radius;
+    }
+
+    button:last-child {
+      border: 1px solid black;
+      border-radius: $radius;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .car-actions {
+    padding: 20px;
+  }
+}

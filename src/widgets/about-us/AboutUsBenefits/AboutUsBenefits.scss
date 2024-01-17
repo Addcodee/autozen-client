@@ -1,0 +1,144 @@
+@import "../../../shared/variables.scss";
+
+.about-us-benefits {
+  padding: 100px 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  color: white;
+
+  h3 {
+    font-size: 48px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+
+    li {
+      padding: 20px;
+      display: flex;
+      gap: 20px;
+      color: black;
+      background-color: #fff;
+      border-radius: $radius;
+
+      div:last-child {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        h4 {
+          font-size: 24px;
+        }
+
+        p {
+          font-size: 18px;
+          line-height: 32px;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    min-width: 50px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: $shadow;
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .about-us-benefits {
+    padding: 70px 100px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .about-us-benefits {
+    padding: 60px 30px;
+
+    h3 {
+      font-size: 42px;
+    }
+
+    &__list {
+      gap: 30px;
+
+      li {
+        div:last-child {
+          p {
+            line-height: 28px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-us-benefits {
+    padding: 60px 30px;
+
+    h3 {
+      font-size: 38px;
+    }
+
+    &__list {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      li {
+        div:last-child {
+          gap: 10px;
+          h4 {
+            font-size: 20px;
+          }
+          p {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+
+    &__icon {
+      min-width: 40px;
+      width: 40px;
+      height: 40px;
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .about-us-benefits {
+    padding: 60px 20px;
+
+    h3 {
+      font-size: 32px;
+    }
+
+    &__list {
+      grid-template-columns: 1fr;
+      gap: 30px;
+
+      li {
+        padding: 15px;
+      }
+    }
+  }
+}

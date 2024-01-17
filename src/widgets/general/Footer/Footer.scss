@@ -1,0 +1,188 @@
+@import "../../../shared/variables.scss";
+
+.footer {
+  padding: 100px 180px;
+  background-color: #1c1c1c;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 50px;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: white;
+
+    h3 {
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    button {
+      padding: 10px 20px;
+      width: fit-content;
+      background-color: $reseda;
+      border-radius: $radius;
+      color: white;
+      font-size: 18px;
+    }
+  }
+
+  &__line {
+    margin: 50px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  &__logo {
+    p {
+      font-size: 16px;
+      color: white;
+    }
+
+    &_big {
+      img {
+        width: 200px;
+        height: 100px;
+      }
+    }
+
+    &_small {
+      display: none;
+    }
+  }
+
+  &__links,
+  &__nets,
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: white;
+  }
+
+  &__links {
+    li {
+      a {
+        color: white;
+      }
+    }
+  }
+
+  &__contacts,
+  &__nets {
+    h5 {
+      font-size: 18px;
+    }
+  }
+
+  &__contacts {
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+
+  &__nets {
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .footer {
+    padding: 70px 100px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .footer {
+    padding: 60px 30px;
+
+    &__container {
+      gap: 30px;
+    }
+
+    &__header {
+      h3 {
+        font-size: 28px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      button {
+        font-size: 16px;
+      }
+    }
+
+    &__logo {
+      &_big {
+        img {
+          width: 160px;
+          height: 80px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 50px 30px;
+
+    &__container {
+      gap: 30px;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    &__nets {
+      grid-column: 2 / 3;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    padding: 40px 20px;
+
+    &__container {
+      gap: 30px;
+      grid-template-columns: 1fr;
+    }
+
+    &__line {
+      margin: 30px 0;
+    }
+
+    &__nets {
+      grid-column: 1 / 2;
+    }
+
+    &__logo {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      &_big {
+        display: none;
+      }
+
+      &_small {
+        display: block;
+      }
+    }
+  }
+}

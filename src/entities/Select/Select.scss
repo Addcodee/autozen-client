@@ -1,6 +1,7 @@
 @import "../../shared/variables.scss";
 
-.select {
+.select-light,
+.select-dark {
   position: relative;
   width: 100%;
   display: flex;
@@ -11,7 +12,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: $border;
     border-radius: $radius;
     height: 50px;
 
@@ -21,6 +21,10 @@
       overflow: hidden;
       white-space: nowrap;
     }
+  }
+
+  &__chevron_up {
+    transform: rotate(180deg);
   }
 
   &__options {
@@ -47,6 +51,9 @@
         padding: 20px;
         border-bottom: $border;
         transition: 0.3s;
+        border-radius: $radius;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
       }
 
       button:hover {
@@ -68,8 +75,30 @@
   }
 }
 
+.select-dark {
+  &__label {
+    border: 1px solid white;
+    background-color: $dark;
+
+    p {
+      color: white;
+    }
+  }
+}
+
+.select-light {
+  &__label {
+    border: $border;
+    background-color: white;
+    p {
+      color: black;
+    }
+  }
+}
+
 @media screen and (max-width: 550px) {
-  .select {
+  .select-light,
+  .select-dark {
     &__label {
       p {
         font-size: 16px;

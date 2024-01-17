@@ -1,7 +1,3 @@
-import React from "react";
+import CreateCarPage from "@/pages/admin/CreateCarPage/CreateCarPage";
 
-const page = () => {
-  return <div>page</div>;
-};
-
-export default page;
+export default CreateCarPage;

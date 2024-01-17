@@ -1,7 +1,3 @@
-import React from "react";
+import CarDetailsPage from "@/pages/CarDetailsPage/CarDetailsPage";
 
-const page = () => {
-  return <div>page</div>;
-};
-
-export default page;
+export default CarDetailsPage;

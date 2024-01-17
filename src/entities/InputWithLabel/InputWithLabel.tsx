@@ -1,3 +1,5 @@
+"use client";
+
 import "./InputWithLabel.scss";
 
 interface InputWithLabelProps {
@@ -5,6 +7,7 @@ interface InputWithLabelProps {
   label: string;
   required?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  theme?: string;
 }
 
 const InputWithLabel = ({
@@ -12,6 +15,7 @@ const InputWithLabel = ({
   value,
   label,
   required,
+  theme,
 }: InputWithLabelProps) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (onChange) {
@@ -19,7 +23,13 @@ const InputWithLabel = ({
     }
   };
   return (
-    <div className="inputWithLabel">
+    <div
+      className={
+        theme === "dark"
+          ? "inputWithLabel-dark"
+          : "inputWithLabel-light"
+      }
+    >
       <label>
         {label}: {required && <span>*</span>}
       </label>

@@ -1,6 +1,7 @@
 @import "../../shared/variables.scss";
 
-.inputWithLabel {
+.inputWithLabel-light,
+.inputWithLabel-dark {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -8,6 +9,7 @@
   label {
     padding: 0 5px;
     font-weight: 500;
+    color: black;
     span {
       color: rgb(190, 0, 0);
     }
@@ -18,6 +20,28 @@
     padding: 10px;
     border-radius: $radius;
     border: $border;
+    font-size: 18px;
+  }
+}
+
+.inputWithLabel-light {
+  label {
+    color: black;
+  }
+
+  input {
     background-color: $light-gray;
+    color: black;
+  }
+}
+
+.inputWithLabel-dark {
+  label {
+    color: white;
+  }
+
+  input {
+    background-color: $dark;
+    color: white;
   }
 }

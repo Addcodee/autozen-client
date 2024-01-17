@@ -2,7 +2,7 @@
 
 import "./SendMessage.scss";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import close_icon from "../../shared/icons/close-icon.svg";
 import check_icon from "../../shared/icons/check-icon.svg";
 import InputWithLabel from "@/entities/InputWithLabel/InputWithLabel";

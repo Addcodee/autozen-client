@@ -1,0 +1,35 @@
+@import "../shared/variables.scss";
+
+.outline-btn-red,
+.outline-btn-green,
+.outline-btn-blue,
+.outline-btn-grey,
+.outline-btn-white {
+  padding: 10px 20px;
+  border-radius: $radius;
+}
+
+.outline-btn-red {
+  border: 2px solid $danger;
+  color: $danger;
+}
+
+.outline-btn-green {
+  border: 2px solid $green;
+  color: $green;
+}
+
+.outline-btn-blue {
+  border: 2px solid $blue;
+  color: $blue;
+}
+
+.outline-btn-grey {
+  border: 2px solid $grey;
+  color: $grey;
+}
+
+.outline-btn-white {
+  border: 2px solid white;
+  color: white;
+}

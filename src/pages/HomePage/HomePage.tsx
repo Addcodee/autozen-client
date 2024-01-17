@@ -1,16 +1,17 @@
-import AboutUsSection from "@/widgets/AboutUsSection/AboutUsSection";
-import CarPicker from "@/widgets/CarPicker/CarPicker";
-import Cases from "@/widgets/Cases/Cases";
-import Header from "@/widgets/Header/Header";
-import React from "react";
+import AboutUsSection from "@/widgets/landing/AboutUsSection/AboutUsSection";
+import AboutUsWhyUs from "@/widgets/landing/AboutUsWhyUs/AboutUsWhyUs";
+import CarPicker from "@/widgets/landing/CarPicker/CarPicker";
+import Cases from "@/widgets/landing/Cases/Cases";
+import Header from "@/widgets/landing/Header/Header";
 
 const HomePage = () => {
   return (
     <div>
       <Header />
       <Cases />
-      <AboutUsSection />
+      <AboutUsWhyUs />
       <CarPicker />
+      <AboutUsSection />
     </div>
   );
 };

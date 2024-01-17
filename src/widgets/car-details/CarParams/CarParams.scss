@@ -1,0 +1,61 @@
+@import "../../../shared/variables.scss";
+
+.car-params {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  background-color: #fff;
+  border: $border;
+  border-radius: $radius;
+  box-shadow: $shadow;
+
+  h3 {
+    font-size: 32px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    li {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      h4 {
+        font-weight: 500;
+      }
+
+      p {
+        font-weight: 700;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .car-params {
+    grid-row: 2 / 3;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .car-params {
+    padding: 20px;
+    gap: 30px;
+    h3 {
+      font-size: 24px;
+    }
+
+    ul {
+      li {
+        h4 {
+          font-size: 15px;
+        }
+        p {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}

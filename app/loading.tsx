@@ -1,7 +1,3 @@
-import React from "react";
+import Loader from "@/shared/UI/Loader/Loader";
 
-const Loading = () => {
-  return <div>Loading</div>;
-};
-
-export default Loading;
+export default Loader;

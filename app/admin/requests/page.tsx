@@ -1,7 +1,3 @@
-import React from "react";
+import RequestsPage from "@/pages/admin/RequestsPage/RequestsPage";
 
-const page = () => {
-  return <div>page</div>;
-};
-
-export default page;
+export default RequestsPage;

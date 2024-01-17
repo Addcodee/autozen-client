@@ -8,8 +8,10 @@ const Dashboard = () => {
   const [activePage, setActivePage] = useState<string>("");
 
   const pages = [
-    { id: 1, page: "Автомобили", path: "/admin/autos" },
-    { id: 2, page: "Заявки", path: "/admin/requests" },
+    { id: 1, page: "Главная", path: "/" },
+    { id: 2, page: "Автомобили", path: "/admin/autos" },
+    { id: 3, page: "Заявки", path: "/admin/requests" },
+    { id: 4, page: "Заказы", path: "/admin/orders" },
   ];
 
   useEffect(() => {

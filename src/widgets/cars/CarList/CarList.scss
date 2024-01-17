@@ -1,0 +1,139 @@
+@import "../../../shared/variables.scss";
+
+.car-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__mode {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border: $border;
+    border-radius: $radius;
+    box-shadow: $shadow;
+
+    h3 {
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    &_right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    &-grid,
+    &-grid_active {
+      padding: 4px;
+      width: 32px;
+      height: 32px;
+      border-radius: 2px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+
+      div {
+        width: 100%;
+        height: 100%;
+        background-color: $grey;
+        border-radius: 2px;
+      }
+    }
+
+    &-grid_active {
+      background-color: $reseda;
+
+      div {
+        background-color: #fff;
+      }
+    }
+
+    &-list,
+    &-list_active {
+      padding: 4px;
+      width: 32px;
+      height: 32px;
+      border-radius: 2px;
+
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4px;
+
+      div {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 3px;
+
+        div {
+          background-color: $grey;
+          border-radius: 2px;
+        }
+
+        div:last-child {
+          grid-column: 2 / 4;
+        }
+      }
+    }
+
+    &-list_active {
+      background-color: $reseda;
+
+      div {
+        div {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+
+  &__wrapper-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
+  &__wrapper-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  .car-list {
+    &__mode {
+      h3 {
+        font-size: 24px;
+      }
+    }
+
+    &__wrapper-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .car-list {
+    &__mode {
+      h3 {
+        font-size: 20px;
+      }
+
+      &_right {
+        gap: 10px;
+      }
+    }
+
+    &__wrapper-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 "use client";
 
 import "./Select.scss";
-import chevron_down from "../../shared/icons/chevron-down-icon.svg";
+import chevron from "../../shared/icons/chevron-down-icon.svg";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
@@ -9,8 +9,9 @@ interface ISelectProps {
   options: string[];
   placeholder: string;
   isMultiple?: boolean;
-  handleSelect: (options: string[]) => void;
-  value: string[];
+  handleSelect: (options: string[] | string) => void;
+  value: string[] | string;
+  theme?: string;
 }
 
 const Select: React.FC<ISelectProps> = ({
@@ -19,6 +20,7 @@ const Select: React.FC<ISelectProps> = ({
   isMultiple,
   handleSelect,
   value,
+  theme,
 }: ISelectProps) => {
   const [open, setOpen] = useState<boolean>(false);
   const menuRef: React.RefObject<HTMLDivElement> = useRef(null);
@@ -36,15 +38,19 @@ const Select: React.FC<ISelectProps> = ({
           return;
         }
 
-        const removeOption = value.filter((item) => item !== option);
+        if (Array.isArray(value)) {
+          const removeOption = value.filter(
+            (item) => item !== option
+          );
 
-        return handleSelect(removeOption);
+          return handleSelect(removeOption);
+        }
       }
 
       return handleSelect([...value, option]);
     }
 
-    handleSelect([option]);
+    handleSelect(option);
     setOpen(false);
   };
 
@@ -63,31 +69,42 @@ const Select: React.FC<ISelectProps> = ({
     };
   }, [menuRef]);
 
+  const themeClass = () => {
+    if (theme === "dark") {
+      return "select-dark";
+    }
+
+    return "select-light";
+  };
+
   return (
-    <div ref={menuRef} className="select">
+    <div ref={menuRef} className={themeClass()}>
       <button
         onClick={() => setOpen((prev) => !prev)}
-        className="select__label"
+        className={`${themeClass()}__label`}
       >
         <p>
-          {value[0] === "" || value.length === 0
+          {value === "" || value.length === 0
             ? placeholder
-            : value.join(", ")}
+            : Array.isArray(value)
+            ? value.join(", ")
+            : value}
         </p>
         <Image
-          src={chevron_down}
-          alt="Down Chevron"
+          className={open ? `${themeClass()}__chevron_up` : ""}
+          src={chevron}
+          alt="Chevron Icon"
           width={18}
           height={18}
         />
       </button>
 
       {open && (
-        <ul className="select__options">
+        <ul className={`${themeClass()}__options`}>
           {options.map((option) => (
             <li
               key={option}
-              className={`select__options-item${
+              className={`${themeClass()}__options-item${
                 value.includes(option) ? "_active" : ""
               }`}
             >
