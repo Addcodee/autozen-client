@@ -8,11 +8,11 @@ import AboutUsBenefits from "@/widgets/about-us/AboutUsBenefits/AboutUsBenefits"
 const AboutUsPage = () => {
   return (
     <div className="about-us">
-      <AboutUsHeader />
+      {/* <AboutUsHeader />
       <AboutUsBenefits />
       <AboutUsStory />
       <AboutUsServices />
-      <AboutUsEmployees />
+      <AboutUsEmployees /> */}
     </div>
   );
 };

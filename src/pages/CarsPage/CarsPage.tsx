@@ -7,7 +7,7 @@ import background from "./assets/background.jpg";
 const CarsPage = () => {
   return (
     <div className="cars-page">
-      <PageHeader
+      {/* <PageHeader
         background={background}
         title="Витрина авто"
         description="Здесь вы можете подобрать наиболее подходящий вариант"
@@ -15,7 +15,7 @@ const CarsPage = () => {
       <div className="cars-page__container">
         <CarDashboard />
         <CarList />
-      </div>
+      </div> */}
     </div>
   );
 };
