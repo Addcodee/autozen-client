@@ -1,0 +1,42 @@
+@import "../../shared/variables.scss";
+
+.cars-page {
+  margin-top: 100px;
+  &__container {
+    padding: 30px 70px 70px 70px;
+    display: grid;
+    grid-template-columns: 25% 1fr;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .cars-page {
+    &__container {
+      padding: 70px 30px 70px 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .cars-page {
+    &__container {
+      padding: 70px 30px 70px 30px;
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cars-page {
+    margin-top: 70px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .cars-page {
+    &__container {
+      padding: 50px 20px 50px 20px;
+    }
+  }
+}

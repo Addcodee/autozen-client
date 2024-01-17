@@ -60,7 +60,7 @@ const Menu = () => {
 
           <ul className="menu__pages">
             {pages.map((page) => (
-              <li>
+              <li key={page.id}>
                 <Link key={page.id} href={page.path}>
                   {page.title}
                 </Link>

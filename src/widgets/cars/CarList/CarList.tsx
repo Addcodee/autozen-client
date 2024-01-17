@@ -37,7 +37,7 @@ const CarList = () => {
       </div>
       <div className={`car-list__wrapper-${mode ? "list" : "grid"}`}>
         {cars.map((car) => (
-          <CarCard card={car} mode={mode} />
+          <CarCard key={car.id} card={car} mode={mode} />
         ))}
       </div>
     </div>
