@@ -4,12 +4,14 @@ import Select from "@/entities/Select/Select";
 import "./CarPicker.scss";
 import { useState } from "react";
 
+type option = string | string[];
+
 const CarPicker = () => {
-  const [mark, setMark] = useState<string[]>([""]);
-  const [model, setModel] = useState<string[]>([""]);
-  const [generation, setGeneration] = useState<string[]>([""]);
-  const [deliveryType, setDeliveryType] = useState<string[]>([""]);
-  const [destination, setDestination] = useState<string[]>([""]);
+  const [mark, setMark] = useState<option>([""]);
+  const [model, setModel] = useState<option>([""]);
+  const [generation, setGeneration] = useState<option>([""]);
+  const [deliveryType, setDeliveryType] = useState<option>([""]);
+  const [destination, setDestination] = useState<option>([""]);
   const [result, setResult] = useState<boolean>(false);
 
   const marks = ["BMW", "Audi", "Mercedes-Benz"];
